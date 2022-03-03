@@ -1,0 +1,13 @@
+version: '3.11'
+services:
+  tb-database:
+    image: postgres:14.2-alpine
+    container_name: tb-database
+    environment:
+      - POSTGRES_USER=tb
+      - POSTGRES_PASSWORD=tb
+      - POSTGRES_DB=tb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/tb-database:/var/lib/postgresql/data
